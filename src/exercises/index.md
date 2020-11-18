@@ -1,6 +1,5 @@
 ---
-title: Övningsuppgifter
-subtitle: OOP1 2020
+title: Exercise: natural numbers
 ---
 
 <div class="warning">
