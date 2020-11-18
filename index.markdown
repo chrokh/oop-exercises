@@ -9,7 +9,7 @@ subtitle: OOP1 2020
 
 1. Klasser, instansvariabler, och konstruktorer
     1. Skapa en klass som heter `Nat`. Ordet "nat" används här för att föra tankarna till den naturliga talserien ([natural numbers](https://en.wikipedia.org/wiki/Natural_number)) där nästa tal alltid är 1 större än föregående. I den definition vi använder här så börjar de "naturliga" talen på 1 och de "hela" talen på 0.
-    1. Deklarera en instansvariabel i klassen `Nat`. Instansvariabeln ska heta `x`, ha typen `string` och dess access modifier ska vara `private`.
+    1. Deklarera en instansvariabel i klassen `Nat`. Instansvariabeln ska heta `x`, ha typen `int` och dess access modifier ska vara `private`.
     1. Skapa en konstruktor utan parametrar i klassen `Nat`. Konstruktorn ska sätta instansvariabeln `x` till det hårdkodade värdet 1. Vi väljer detta eftersom 1 är det lägsta naturliga talet.
     1. Skapa en till konstruktor i klassen `Nat` som tar en parameter av typen `int`. Du väljer själv vad denna variabel ska heta. Tilldela instansvariabeln `x` detta värde.
     1. Varför är det problematiskt att vi försöker representera naturliga tal med datatypen `int`? Tips: tänk på vilka värden de olika datatyperna tillåter.
