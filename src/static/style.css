@@ -1,0 +1,45 @@
+body {
+  margin: 0 auto;
+  width: 920px;
+  max-width: 100%;
+  padding: 1rem 1rem;
+  font-size: 1.4rem;
+  line-height: 1.7rem;
+  font-family: helvetica, arial, sans-serif;
+  color: #586069;
+}
+
+h1 {
+  line-height: 3rem;
+}
+
+a {
+  color: blue;
+  text-decoration: none;
+}
+a:hover {
+  color: blue;
+  text-decoration: underline;
+}
+
+li {
+  margin-top: 0.6rem;
+}
+
+body > ol > li {
+  margin-top: 1.7rem;
+  font-weight: bold;
+}
+body > ol > li li {
+  font-weight: normal;
+}
+
+li > code {
+  font-family: Courier;
+  font-size: 1.4rem;
+  padding: 0 4px;
+}
+
+.warning {
+  color: rgb(220, 75, 75);
+}

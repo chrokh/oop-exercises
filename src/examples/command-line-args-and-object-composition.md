@@ -1,4 +1,9 @@
-﻿using System;
+---
+title: "Example: Command line arguments and object composition"
+---
+
+```csharp
+using System;
 using System.Collections.Generic;
 
 namespace example
@@ -114,3 +119,4 @@ namespace example
     }
   }
 }
+```

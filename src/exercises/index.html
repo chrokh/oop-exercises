@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Övningsuppgifter</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="../static/style.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Övningsuppgifter</h1>
+<p class="subtitle">OOP1 2020</p>
+</header>
+<div class="warning">
+<p><em>Detta dokument är under konstruktion och kommer att förändras över kommande dagar. Använd på egen risk :)</em></p>
+</div>
+<ol type="1">
+<li>Klasser, instansvariabler, och konstruktorer
+<ol type="1">
+<li>Skapa en klass som heter <code>Nat</code>. Ordet “nat” används här för att föra tankarna till den naturliga talserien (<a href="https://en.wikipedia.org/wiki/Natural_number">natural numbers</a>) där nästa tal alltid är 1 större än föregående. I den definition vi använder här så börjar de “naturliga” talen på 1 och de “hela” talen på 0.</li>
+<li>Deklarera en instansvariabel i klassen <code>Nat</code>. Instansvariabeln ska heta <code>x</code>, ha typen <code>int</code> och dess access modifier ska vara <code>private</code>.</li>
+<li>Skapa en konstruktor utan parametrar i klassen <code>Nat</code>. Konstruktorn ska sätta instansvariabeln <code>x</code> till det hårdkodade värdet 1. Vi väljer detta eftersom 1 är det lägsta naturliga talet.</li>
+<li>Skapa en till konstruktor i klassen <code>Nat</code> som tar en parameter av typen <code>int</code>. Du väljer själv vad denna variabel ska heta. Tilldela instansvariabeln <code>x</code> detta värde.</li>
+<li>Varför är det problematiskt att vi försöker representera naturliga tal med datatypen <code>int</code>? Tips: tänk på vilka värden de olika datatyperna tillåter.</li>
+</ol></li>
+<li>Instansmetoder, statiska metoder, och objekt
+<ol type="1">
+<li>Skapa en publik instansmetod i klassen <code>Nat</code> som heter <code>Print</code>. Metoden ska inte ta några parametrar och inte heller returnera någonting. Vad gäller implementationen så ska metoden skriva ut värdet som finns lagrat i <code>x</code> konkatenerat med strängen <code>" :: Nat"</code>. Skriv ut till skärmen genom att använda <code>WriteLine</code>. Om <code>x</code> t.ex. innehåller 5 så ska vi alltså skriva ut <code>"5 :: Nat"</code>.</li>
+<li>Varför kan metoden <code>Print</code> inte vara en statisk (<code>static</code>) metod?</li>
+<li>Instantiera klassen <code>Nat</code> två gånger utanför <code>Nat</code> (t.ex. i din main entry point) och lagra de två objekten i två variabler som du kallar <code>n1</code> respektive <code>n2</code>. Det första objektet ska instantieras genom <code>Nat</code>-konstruktorn som inte tar några parametrar, medan den andra ska instantieras genom den konstruktorn som förväntar sig en <code>int</code>. Välj själv vilket positivt heltal (större än noll) du ska ge <code>n2</code>.</li>
+<li>Anropa instansmetoden <code>Print</code> för både <code>n1</code> och <code>n2</code> så att deras meddelanden skrivs ut på skärmen.</li>
+<li>Kör programmet. Skriver objekten ut samma sak? Varför?</li>
+</ol></li>
+<li>Coupling och cohesion
+<ol type="1">
+<li>Skriv om instansmetoden <code>Print</code> i <code>Nat</code>-klassen så att den returnerar en <code>string</code> istället för att printa direkt till skärmen.</li>
+<li>Varför printas inte längre någonting när vi nu kör programmet?</li>
+<li>Hur har <code>Nat</code>-klassens dependencies förändrats nu när vi inte längre anropar <code>WriteLine</code> direkt i <code>Nat</code>?</li>
+<li>Printa (genom <code>WriteLine</code>) de två strängarna som returneras av de två naturliga talen (<code>n1</code> och <code>n2</code>) när vi i vår main entry point anropar <code>Print</code>.</li>
+<li>På vilka sätt skulle detta sätt att printa kunna vara bättre än det föregående? Tips: tänk på begreppen coupling och cohesion.</li>
+</ol></li>
+<li>Instansmetoder och mutation
+<ol type="1">
+<li>Skapa en publik instansmetod i klassen <code>Nat</code> som heter <code>Inc</code>. Metoden ska inte ta några parametrar och inte heller returnera någonting. Metodens implementation är helt enkelt att instansvariabeln <code>x</code> inkrementeras med 1.</li>
+<li>Skapa en publik instansmetod i klassen <code>Nat</code> som heter <code>Dec</code>. Metoden ska inte ta några parametrar och inte heller returnera någonting. Metodens implementation är att instansvariabeln <code>x</code> dekrementeras med 1, men endast ifall det resulterande talet är större än 0.</li>
+<li>Varför vill vi inte att <code>x</code> ska kunna dekrementeras till ett tal som är lägre än 1?</li>
+<li>Vad menas när vi säger att metoderna <code>Inc</code> och <code>Dec</code> “muterar” instanser av <code>Nat</code>?</li>
+<li>Vad menas när vi säger att metoderna <code>Inc</code> och <code>Dec</code> inte är “pure”?</li>
+<li>Är <code>Nat</code> en “immutable” eller “mutable” datatyp? Varför?</li>
+</ol></li>
+<li>Objekt som parametrar
+<ol type="1">
+<li>Skapa en publik instansmetod i klassen <code>Nat</code> som heter <code>Add</code>. Metoden ska ta en parameter av typen <code>Nat</code> men inte returnera någonting. Metoden ska addera innehållet i de två naturliga talen och sätta <code>x</code> till det uträknade värdet.</li>
+<li>Anropa instansmetoden <code>Add</code> på <code>n1</code> och skicka <code>n2</code> som argument.</li>
+<li>Printa efter detta ut både <code>n1</code> och <code>n2</code> genom att anropa <code>Print</code> och skicka resultatet till <code>WriteLine</code>.</li>
+<li>Varför har bara värdet i <code>n1</code> förändrats?</li>
+</ol></li>
+<li>Exceptions
+<ol type="1">
+<li>Låt konstruktorn som tar ett argument kasta ett exception (t.ex. <code>ArgumentException</code>) om den <code>int</code> som den tar emot är lägre än 1.</li>
+<li>Vad hade vi kunnat göra istället för att kasta ett exception om vi blir givna ett tal lägre än 1?</li>
+</ol></li>
+<li>Object composition
+<ol type="1">
+<li>Skapa en ny klass som heter <code>NatPair</code>. Klassen ska innehålla två privata instansvariabler av typen <code>Nat</code> vars värde tilldelas genom två parametrar i konstruktorn.</li>
+<li>Skapa en publik instansmetod i <code>NatPair</code> som heter <code>Sum</code>. Metoden tar inga argument, returnerar en <code>Nat</code> och räknar ut denna int genom att summera de två instansvariablerna och returnera resultatet.</li>
+<li>Skapa en publik instansmetod i klassen <code>NatPair</code> som heter <code>Inc</code>. Metoden ska inte ta några parametrar och inte heller returnera någonting. Metoden inkrementerar båda de underliggande instansvariablerna av typ <code>Nat</code>.</li>
+<li>Skapa en publik instansmetod i klassen <code>NatPair</code> som heter <code>Dec</code>. Metoden ska inte ta några parametrar och inte heller returnera någonting. Metoden dekrementerar båda de underliggande instansvariablerna.</li>
+<li>Skapa en publik instansmetod i klassen <code>NatPair</code> som heter <code>Add</code>. Metoden tar en parameter av typen <code>Nat</code> men returnerar ingenting. Metoden adderar det inpassade objektet av typen <code>Nat</code> till de båda instansvariablerna av typen <code>Nat</code>.</li>
+</ol></li>
+<li>Overriding
+<ol type="1">
+<li>TODO (<code>ToString</code>)</li>
+</ol></li>
+<li>Interfaces (subtype polymorphism)
+<ol type="1">
+<li>TODO (<code>Nat : Num</code> and <code>NatPair : Num</code>)</li>
+</ol></li>
+<li>Abstract classes (subtype polymorphism)
+<ol type="1">
+<li>TODO</li>
+</ol></li>
+<li>Class inheritance (subtype polymorphism)
+<ol type="1">
+<li>TODO</li>
+</ol></li>
+<li>Generics (parametric polymorphism)
+<ol type="1">
+<li>TODO (<code>Pair&lt;Nat&gt;</code> instead of <code>NatPair</code>)</li>
+</ol></li>
+<li>Immutability and recursion
+<ol type="1">
+<li>TODO (Nat returns new nat instead of mutating)</li>
+<li>TODO (Church numerals now requires recursion)</li>
+</ol></li>
+</ol>
+</body>
+</html>

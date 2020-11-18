@@ -1,5 +1,5 @@
 ---
-title: Övningsuppgifter (v0.1)
+title: Övningsuppgifter
 subtitle: OOP1 2020
 ---
 
