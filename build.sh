@@ -1,8 +1,21 @@
 #!/bin/bash
-mkdir -p docs/static
+
+echo "> rm"
+rm -rf docs
+
+echo "> mkdir"
 mkdir -p docs/examples
 mkdir -p docs/exercises
-cp src/static/style.css docs/static/style.css
+
+echo "> Index"
 pandoc -s -c "static/style.css" src/index.md -o docs/index.html
-pandoc -s -c "../static/style.css" src/exercises/index.md -o docs/exercises/index.html
+
+echo "> Statics"
+cp -r src/static docs/static
+
+echo "> Exercises"
+pandoc -s -c "../static/style.css" src/exercises/nat.md -o docs/exercises/nat.html
+pandoc -s -c "../static/style.css" src/exercises/ciphers.md -o docs/exercises/ciphers.html
+
+echo "> Examples"
 pandoc -s -c "../static/style.css" src/examples/command-line-args-and-object-composition.md -o docs/examples/command-line-args-and-object-composition.html

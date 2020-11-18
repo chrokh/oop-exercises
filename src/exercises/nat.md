@@ -1,10 +1,6 @@
 ---
-title: Exercise: natural numbers
+title: "Exercise: Natural numbers"
 ---
-
-<div class="warning">
-*Detta dokument är under konstruktion och kommer att förändras över kommande dagar. Använd på egen risk :)*
-</div>
 
 1. Klasser, instansvariabler, och konstruktorer
     1. Skapa en klass som heter `Nat`. Ordet "nat" används här för att föra tankarna till den naturliga talserien ([natural numbers](https://en.wikipedia.org/wiki/Natural_number)) där nästa tal alltid är 1 större än föregående. I den definition vi använder här så börjar de "naturliga" talen på 1 och de "hela" talen på 0.
@@ -40,6 +36,7 @@ title: Exercise: natural numbers
     1. Anropa instansmetoden `Add` på `n1` och skicka `n2` som argument.
     1. Printa efter detta ut både `n1` och `n2` genom att anropa `Print` och skicka resultatet till `WriteLine`.
     1. Varför har bara värdet i `n1` förändrats?
+    1. Hur skulle du kunna implementera en publik instansmetod i `Nat` som heter `Sub`?
 
 1. Exceptions
     1. Låt konstruktorn som tar ett argument kasta ett exception (t.ex. `ArgumentException`) om den `int` som den tar emot är lägre än 1.
@@ -51,22 +48,5 @@ title: Exercise: natural numbers
     1. Skapa en publik instansmetod i klassen `NatPair` som heter `Inc`. Metoden ska inte ta några parametrar och inte heller returnera någonting. Metoden inkrementerar båda de underliggande instansvariablerna av typ `Nat`.
     1. Skapa en publik instansmetod i klassen `NatPair` som heter `Dec`. Metoden ska inte ta några parametrar och inte heller returnera någonting. Metoden dekrementerar båda de underliggande instansvariablerna.
     1. Skapa en publik instansmetod i klassen `NatPair` som heter `Add`. Metoden tar en parameter av typen `Nat` men returnerar ingenting. Metoden adderar det inpassade objektet av typen `Nat` till de båda instansvariablerna av typen `Nat`.
+    1. Hur skulle du kunna implementera en publik instansmetod i `NatPair` som heter `Sub`?
 
-1. Overriding
-    1. TODO (`ToString`)
-
-1. Interfaces (subtype polymorphism)
-    1. TODO (`Nat : Num` and `NatPair : Num`)
-
-1. Abstract classes (subtype polymorphism)
-    1. TODO
-
-1. Class inheritance (subtype polymorphism)
-    1. TODO
-
-1. Generics (parametric polymorphism)
-    1. TODO (`Pair<Nat>` instead of `NatPair`)
-
-1. Immutability and recursion
-    1. TODO (Nat returns new nat instead of mutating)
-    1. TODO (Church numerals now requires recursion)
