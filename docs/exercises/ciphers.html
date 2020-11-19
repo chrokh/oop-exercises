@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Exercise: Ciphers</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <link rel="stylesheet" href="../static/style.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Exercise: Ciphers</h1>
+</header>
+<p>In this exercise we will be constructing the basic non-visual components of the application depicted in the GIF below:</p>
+<figure>
+<img src="../static/ciphers.gif" alt="" /><figcaption>Graphical execution example.</figcaption>
+</figure>
+<h2 id="our-first-cipher">Our first cipher</h2>
+<ol type="1">
+<li>Introduce a class called <code>CaesarCipher</code>.</li>
+<li>Introduce a public instance method called <code>Encrypt</code> to the class <code>CasearCipher</code>. The method should expect a <code>string</code> and return a <code>string</code>.</li>
+<li>The implementation <code>Encrypt</code> should follow the idea of a <a href="https://en.wikipedia.org/wiki/Caesar_cipher">1-step Caesar Cipher</a>. Meaning that every <code>"a"</code> in the string should be converted to a <code>"b"</code>, every <code>"b"</code> should be converted to a <code>"c"</code>, every <code>"c"</code> should be converted to a <code>"d"</code>, and so forth. When we reach <code>"z"</code> we must “wrap around” and convert to <code>"a"</code>. Note that case should be maintained.</li>
+<li>Introduce a public instance method called <code>Decrypt</code> to the class <code>CaesarCipher</code>. This method should be the inverse of the method <code>Encrypt</code> such that <code>Decrypt(Encrypt(x)) == x</code>.</li>
+<li>Ensure that both encrypting and decrypting works by instantiating the class <code>CaesarCipher</code> and then encrypting and decrypting a few strings.</li>
+</ol>
+<h2 id="parameterizing-our-cipher">Parameterizing our cipher</h2>
+<ol type="1">
+<li>Introduce a constructor with a single parameter to the class <code>CaesarCipher</code>. The type of the parameter should be <code>int</code>.</li>
+<li>The value of the constructor parameter should determine the number of steps and the direction we take in the cipher. If for example the parameter is <code>2</code> then every <code>"a"</code> should, when encrypted, be converted to a <code>"c"</code> while when <code>-2</code> should be converted to <code>"y"</code>.</li>
+<li>Ensure that both encrypting and decrypting works using multiple instances of the class <code>CaesarCipher</code> with different values passed to the constructor.</li>
+</ol>
+<h2 id="our-second-cipher">Our second cipher</h2>
+<ol type="1">
+<li>Introduce a class called <code>ReversalCipher</code>.</li>
+<li>Introduce a public instance method called <code>Encrypt</code> to the class <code>ReversalCipher</code> and let it take a <code>string</code> and return a <code>string</code>. Its implementation should be such that it “reverses” every input string letter by letter. The string <code>"Hello world"</code> should for example be turned into <code>"dlrow olleH"</code>.</li>
+<li>Introduce a public instance method called <code>Decrypt</code> to the class <code>ReversalCipher</code>. Its implementation should correspond to the inverse of <code>Encrypt</code>.</li>
+</ol>
+<h2 id="identifying-commonality">Identifying commonality</h2>
+<ol type="1">
+<li>In what ways are the two ciphers similar and in what ways are they different?</li>
+<li>Introduce an <code>interface</code> called <code>ICipher</code>. The interface should declare two instance methods, <code>Encrypt</code> and <code>Decrypt</code>, that both take and return a single <code>string</code>.</li>
+<li>Let the two cipher classes implement the interface <code>ICipher</code>.</li>
+<li>Does the code compile? Why?</li>
+<li>Name some benefits of letting the ciphers implement the interface <code>ICipher</code>.</li>
+</ol>
+<h2 id="ciphers-of-ciphers">Ciphers of ciphers</h2>
+<ol type="1">
+<li>Introduce a class called <code>MultiCipher</code>.</li>
+<li>Add a constructor with two parameters to the class <code>MultiCipher</code>. The parameters should both be of type <code>ICipher</code>. The first parameter could be named <code>curr</code> (think: “current”) and the second <code>nxt</code> (think: “next”). Both arguments should be saved to private instance variables.</li>
+<li>Introduce a public instance method called <code>Encrypt</code> that takes and returns a <code>string</code>. The implementation should be such that it returns the result of first passing the input <code>string</code> through the method <code>Encrypt</code> on <code>curr</code> and then passing the result of that through the method <code>Encrypt</code> on <code>nxt</code>.</li>
+<li>Show how to use the <code>MultiCipher</code> by instantiating it and running some encryptions.</li>
+<li>Why can we not pass a <code>MultiCipher</code> to the constructor of <code>MultiCipher</code>? Why not?</li>
+<li>Let <code>MultiCipher</code> implement the interface <code>ICipher</code>. Can we now pass a <code>MultiCipher</code> to the constructor of <code>MultiCipher</code>? Why?</li>
+</ol>
+<h2 id="cipher-lists">Cipher lists</h2>
+<ol type="1">
+<li>Introduce a class called <code>CipherBuilder</code>.</li>
+<li>Introduce an instance method called <code>FromList</code> to the class <code>CipherBuilder</code>. The method should take a <code>List&lt;ICipher&gt;</code> and return something of type <code>ICipher</code>. The implementation should be such that it runs through the list of ciphers and produces a <code>MultiCipher</code> that corresponds to that list.</li>
+<li>The <code>CipherBuilder</code> is an immutable data type. What could a mutable version of <code>CipherBuilder</code> look like?</li>
+<li>Introduce a public instance method to the class <code>MultiCipher</code> called <code>ToList</code>. The method should take no arguments but should return a value of type <code>List&lt;ICipher&gt;</code>. The method should “flatten” the <code>MultiCipher</code> such that if we would pass the resulting list through the instance method <code>FromList</code> then we would end up where we started.</li>
+<li>Make use of both <code>FromList</code> and <code>ToList</code> to show that they work and that we can go back and forth using the two.</li>
+<li>Assuming that <code>x</code> is a non-empty list of <code>ICipher</code>, why does <code>new CipherBuilder().FromList(x.ToList()) == x</code> evaluate to <code>false</code>?</li>
+</ol>
+<h2 id="additional-ciphers">Additional ciphers</h2>
+<ol type="1">
+<li>Introduce two new ciphers of your choice. Make sure that they implement the interface <code>ICipher</code>.</li>
+<li>Introduce a new class called <code>NullCipher</code> that implements <code>ICipher</code>. This cipher simply passes through the string it encrypts without changing it. It can be thought of as the <a href="https://en.wikipedia.org/wiki/Identity_function">identity function</a> for ciphers.</li>
+<li>Use the <code>NullCipher</code> in <code>CipherBuilder</code> to avoid having to use <code>null</code>?</li>
+</ol>
+<h2 id="reflecting-thoughts">Reflecting thoughts</h2>
+<ol type="1">
+<li>Would it be preferable to use an abstract class or simply a class instead of <code>ICipher</code>? Why or why not?</li>
+<li>What are the benefits of using the <code>NullCipher</code> in favor of <code>null</code>?</li>
+</ol>
+</body>
+</html>

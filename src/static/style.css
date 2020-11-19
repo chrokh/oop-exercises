@@ -14,11 +14,11 @@ h1 {
 }
 
 a {
-  color: blue;
+  color: #0366d6;
   text-decoration: none;
 }
 a:hover {
-  color: blue;
+  color: #0366d6;
   text-decoration: underline;
 }
 
@@ -26,15 +26,16 @@ li {
   margin-top: 0.6rem;
 }
 
+/*
 body > ol > li {
   margin-top: 1.7rem;
   font-weight: bold;
 }
 body > ol > li li {
   font-weight: normal;
-}
+}*/
 
-li > code {
+li code {
   font-family: Courier;
   font-size: 1.4rem;
   padding: 0 4px;
@@ -42,4 +43,16 @@ li > code {
 
 .warning {
   color: rgb(220, 75, 75);
+}
+
+figcaption {
+  text-align: center;
+  font-style: italic;
+  color: #888;
+}
+
+img {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0;
 }
