@@ -58,7 +58,7 @@
 <ol type="1">
 <li>Introduce a class called <code>MultiCipher</code>.</li>
 <li>Add a constructor with two parameters to the class <code>MultiCipher</code>. The parameters should both be of type <code>ICipher</code>. The first parameter could be named <code>curr</code> (think: “current”) and the second <code>nxt</code> (think: “next”). Both arguments should be saved to private instance variables.</li>
-<li>Introduce a public instance method called <code>Encrypt</code> that takes and returns a <code>string</code>. The implementation should be such that it returns the result of first passing the input <code>string</code> through the method <code>Encrypt</code> on <code>curr</code> and then passing the result of that through the method <code>Encrypt</code> on <code>nxt</code>.</li>
+<li>Introduce a public instance method called <code>Encrypt</code> to the class <code>MultiCipher</code>. The method should take and return a <code>string</code>. The implementation should be such that it returns the result of first passing the input <code>string</code> through the method <code>Encrypt</code> on <code>curr</code> and then passing the result of that through the method <code>Encrypt</code> on <code>nxt</code>.</li>
 <li>Show how to use the <code>MultiCipher</code> by instantiating it and running some encryptions.</li>
 <li>Why can we not pass a <code>MultiCipher</code> to the constructor of <code>MultiCipher</code>? Why not?</li>
 <li>Let <code>MultiCipher</code> implement the interface <code>ICipher</code>. Can we now pass a <code>MultiCipher</code> to the constructor of <code>MultiCipher</code>? Why?</li>

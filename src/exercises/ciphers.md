@@ -39,7 +39,7 @@ In this exercise we will be constructing the basic non-visual components of the 
 
 1. Introduce a class called `MultiCipher`.
 1. Add a constructor with two parameters to the class `MultiCipher`. The parameters should both be of type `ICipher`. The first parameter could be named `curr` (think: "current") and the second `nxt` (think: "next"). Both arguments should be saved to private instance variables.
-1. Introduce a public instance method called `Encrypt` that takes and returns a `string`. The implementation should be such that it returns the result of first passing the input `string` through the method `Encrypt` on `curr` and then passing the result of that through the method `Encrypt` on `nxt`.
+1. Introduce a public instance method called `Encrypt` to the class `MultiCipher`. The method should take and return a `string`. The implementation should be such that it returns the result of first passing the input `string` through the method `Encrypt` on `curr` and then passing the result of that through the method `Encrypt` on `nxt`.
 1. Show how to use the `MultiCipher` by instantiating it and running some encryptions.
 1. Why can we not pass a `MultiCipher` to the constructor of `MultiCipher`? Why not?
 1. Let `MultiCipher` implement the interface `ICipher`. Can we now pass a `MultiCipher` to the constructor of `MultiCipher`? Why?
