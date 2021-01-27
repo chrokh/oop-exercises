@@ -19,3 +19,4 @@ pandoc -s -c "../static/style.css" src/exercises/ciphers.md -o docs/exercises/ci
 
 echo "> Examples"
 pandoc -s -c "../static/style.css" src/examples/command-line-args-and-object-composition.md -o docs/examples/command-line-args-and-object-composition.html
+pandoc -s -c "../static/style.css" src/examples/organism-simulator.md -o docs/examples/organism-simulator.html
